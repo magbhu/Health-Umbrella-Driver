@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Health Umbrella</title>
+    <link rel="stylesheet" href="layout.css">
+    <script src="layout.js" defer></script>
+</head>
+<body>
+    <div id="sidebar-placeholder"></div>
+
+    <div id="header-placeholder"></div>
+
+    <div class="main-content">
+        <div class="booking-list-container">
+            
+            <div class="page-header">
+                <button class="back-button" onclick="window.location.href='index.html'">❮</button>
+                <h2 style="margin: 0 auto; transform: translateX(-15px);">Profile</h2>
+                <div style="width: 20px;"></div> </div>
+
+            <div class="booking-card profile-card">
+                <div class="profile-header-row">
+                    <div class="profile-identity">
+                        <img src="assets/driver_avatar.png" alt="Akash" class="profile-large-img">
+                        <h3>Akash</h3>
+                    </div>
+                    <button class="edit-profile-btn">✎</button>
+                </div>
+
+                <div class="profile-details-list">
+                    <div class="info-row">
+                        <span class="info-label">Contact Number :</span>
+                        <span class="info-value">963458745</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Email :</span>
+                        <span class="info-value">Akash@gmail.com</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Service :</span>
+                        <span class="info-value">Ambulance</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">State :</span>
+                        <span class="info-value">Tamil Nadu</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">City :</span>
+                        <span class="info-value">Chennai</span>
+                    </div>
+                </div>
+
+                <div class="coverage-section">
+                    <p class="info-label" style="margin-bottom: 10px;">Coverage Place :</p>
+                    <div class="tags-container">
+                        <span class="tag-pill">West Mambalam</span>
+                        <span class="tag-pill">T. Nagar</span>
+                        <span class="tag-pill">Anna Nagar</span>
+                        <span class="tag-pill">k.k Nagar</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="booking-card">
+                <h3 class="card-section-title">Bank Account Details</h3>
+                
+                <div class="profile-details-list">
+                    <div class="info-row">
+                        <span class="info-label">Account Number :</span>
+                        <span class="info-value">JHD824872466665A</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Account Name :</span>
+                        <span class="info-value">Dhanush</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Bank Name :</span>
+                        <span class="info-value">SBI</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Bank Branch :</span>
+                        <span class="info-value">M.K.B Nagar</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">IFSC Code :</span>
+                        <span class="info-value">SBI44100004551</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="navbar-placeholder"></div>
+
+    <script>
+        // Load Common Components
+        fetch('header.html').then(r => r.text()).then(d => document.getElementById('header-placeholder').innerHTML = d);
+        
+        fetch('navbar.html').then(r => r.text()).then(d => {
+            document.getElementById('navbar-placeholder').innerHTML = d;
+            // Highlight Profile Icon
+            setTimeout(() => {
+                const navItems = document.querySelectorAll('.nav-item');
+                navItems.forEach(item => item.classList.remove('active'));
+                // Assuming Profile is the 4th item (index 3)
+                if(navItems[3]) navItems[3].classList.add('active');
+            }, 100);
+        });
+
+        fetch('sidebar.html').then(r => r.text()).then(d => document.getElementById('sidebar-placeholder').innerHTML = d);
+    </script>
+</body>
+</html>

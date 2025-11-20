@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Details - Completed</title>
+    <link rel="stylesheet" href="layout.css">
+    <script src="layout.js" defer></script>
+    <style>
+        /* Specific style for the green Completed badge in header */
+        .header-status-badge {
+            background-color: #E8F5E9; /* Light Green */
+            color: #2E7D32; /* Dark Green */
+            padding: 5px 15px;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div id="sidebar-placeholder"></div>
+
+    <div id="header-placeholder"></div>
+
+    <div class="main-content">
+        <div class="booking-details-card">
+            
+            <div class="card-header">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <button class="back-button" onclick="window.location.href='bookings.html'">❮</button>
+                    <h2>Booking Details</h2>
+                </div>
+                <span class="header-status-badge">Completed</span>
+            </div>
+            
+            <div class="driver-info">
+                <img src="assets/driver_avatar.png" alt="Selva Kumar" class="driver-avatar">
+                <div class="driver-text-info">
+                    <h3>Selva Kumar</h3>
+                    <p style="color: #666; margin: 0;">ID no : AK0215</p>
+                </div>
+            </div>
+
+            <div class="booking-summary">
+                <div class="booking-item">
+                    <img src="assets/ambulance_icon.png" alt="Ambulance" class="item-icon">
+                    <div class="item-details">
+                        <p>Booking Id : JHDX44</p>
+                        <p class="small-text">Small ( Omni, etc )</p>
+                    </div>
+                    <span class="booking-status">AM01D2313</span>
+                </div>
+            </div>
+
+            <div class="pickup-drop">
+                <div class="location-item">
+                    <span class="location-marker pickup"></span>
+                    <p>Pickup</p>
+                    <p class="location-address">NO 3/1, 1 Street west mambalam chennai -33</p>
+                </div>
+                <div class="location-item">
+                    <span class="location-marker drop"></span>
+                    <p>Drop</p>
+                    <p class="location-address">NO 3/1, 1 Street vyasrapadi chennai -33</p>
+                </div>
+            </div>
+
+            <h3>Booking Date & Time</h3>
+            <div class="detail-row">
+                <p>Booking Date :</p>
+                <p>21 / 03 / 2025</p>
+            </div>
+            <div class="detail-row">
+                <p>Booking Time :</p>
+                <p>05 : 30 PM</p>
+            </div>
+
+            <h3>Customer Details</h3>
+            <div class="detail-row">
+                <p>Name :</p>
+                <p style="color: #666;">Dinesh Kumar</p>
+            </div>
+            <div class="detail-row">
+                <p>Mobile Number :</p>
+                <p style="color: #666;">9345665447</p>
+            </div>
+
+            <h3>Additional Charges</h3>
+            <div class="detail-row charge">
+                <p style="color: #000;">Charges for patient assistance</p>
+                <p style="font-weight: 700; color: #000;">₹ 350</p>
+            </div>
+
+            <h3>Price Details</h3>
+            <div class="detail-row price">
+                <p>Ambulance Cost</p>
+                <p>₹ 1,500</p>
+            </div>
+            <div class="detail-row price">
+                <p>Additional charges for patient assistance</p>
+                <p>₹ 350</p>
+            </div>
+            <div class="detail-row total-price">
+                <p>Total Price</p>
+                <p>₹ 1,850</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="navbar-placeholder"></div>
+
+    <script>
+        // Load Common Components
+        fetch('header.html').then(r => r.text()).then(d => document.getElementById('header-placeholder').innerHTML = d);
+        
+        fetch('navbar.html').then(r => r.text()).then(d => {
+            document.getElementById('navbar-placeholder').innerHTML = d;
+            // Highlight Booking Icon
+            setTimeout(() => {
+                const navItems = document.querySelectorAll('.nav-item');
+                navItems.forEach(item => item.classList.remove('active'));
+                if(navItems[1]) navItems[1].classList.add('active');
+            }, 100);
+        });
+
+        fetch('sidebar.html').then(r => r.text()).then(d => document.getElementById('sidebar-placeholder').innerHTML = d);
+    </script>
+</body>
+</html>

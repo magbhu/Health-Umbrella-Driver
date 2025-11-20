@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Umbrella Ambulance - Booking Details</title>
+    <link rel="stylesheet" href="layout.css">
+    <script src="layout.js" defer></script>
+</head>
+<body>
+    <div id="sidebar-placeholder"></div>
+
+    <div id="header-placeholder"></div>
+
+    <div class="main-content">
+        <div class="booking-details-card">
+            <div class="card-header">
+                <h2>Booking Details</h2>
+                <button class="menu-button">☰</button>
+            </div>
+            
+            <div class="driver-info">
+                <img src="assets/driver_avatar.png" alt="Selva Kumar" class="driver-avatar">
+                <div class="driver-text-info">
+                    <h3>Selva Kumar</h3>
+                    <div class="driver-actions">
+                        <span class="status-tag emergency">Emergency</span>
+                        <button class="action-button call-customer">📞 Call Customer</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="booking-summary">
+                <div class="booking-item">
+                    <img src="assets/ambulance_icon.png" alt="Ambulance" class="item-icon">
+                    <div class="item-details">
+                        <p>Booking Id : JHDX44</p>
+                        <p class="small-text">( Small , Omni, etc )</p>
+                    </div>
+                    <span class="booking-status">AM01D2313</span>
+                </div>
+            </div>
+
+            <div class="pickup-drop">
+                <div class="location-item">
+                    <span class="location-marker pickup"></span>
+                    <p>Pickup</p>
+                    <p class="location-address">NO 3/1, 1 Street west mambalam chennai -33</p>
+                </div>
+                <div class="location-item">
+                    <span class="location-marker drop"></span>
+                    <p>Drop</p>
+                    <p class="location-address">NO 3/1, 1 Street vyasrapadi chennai -33</p>
+                </div>
+                 <div class="location-item changed-drop">
+                    <span class="location-marker drop"></span>
+                    <p>Changed Drop Location ( User )</p>
+                    <p class="location-address">NO 3/1, 1 Street vyasrapadi chennai -33</p>
+                </div>
+            </div>
+
+            <h3>Booking Date & Time</h3>
+            <div class="detail-row">
+                <p>Booking Date :</p>
+                <p>21 / 03 / 2025</p>
+            </div>
+            <div class="detail-row">
+                <p>Booking Time :</p>
+                <p>05 : 30 PM</p>
+            </div>
+
+            <h3>Customer Details</h3>
+            <div class="detail-row">
+                <p>Name :</p>
+                <p>Dinesh Kumar</p>
+            </div>
+            <div class="detail-row">
+                <p>Mobile Number :</p>
+                <p>9345665447</p>
+            </div>
+
+            <h3>Additional Charges</h3>
+            <div class="detail-row charge">
+                <p>Charges for patient assistance</p>
+                <p>₹ 350</p>
+            </div>
+
+            <div class="call-customer-care">
+                <p>Call customer care in case of any emergency</p>
+                <p class="small-text">Press the call button if there's an Query or Complains</p>
+                <button class="emergency-call-button">
+                    <span>📞 Emergency</span>
+                </button>
+            </div>
+
+            <h3>Price Details</h3>
+            <div class="detail-row price">
+                <p>Ambulance Cost</p>
+                <p>₹ 1,500</p>
+            </div>
+            <div class="detail-row price">
+                <p>Fee for Changing Drop Location</p>
+                <p>₹ 1,000</p>
+            </div>
+            <div class="detail-row price">
+                <p>Additional charges for patient assistance</p>
+                <p>₹ 350</p>
+            </div>
+            <div class="detail-row total-price">
+                <p>Total Price</p>
+                <p>₹ 2,850</p>
+            </div>
+
+            <button class="start-ride-button" id="startRideButton">Start Ride</button>
+
+            <div class="post-start-ride-buttons hidden" id="postStartRideButtons">
+                <button class="track-location-button" id="trackLocationBtn">Track Location</button>
+                <button class="enter-otp-button" id="actionButton">Enter OTP</button>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="navbar-placeholder"></div>
+
+    <div id="otpModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-button" data-modal="otpModal">&times;</span>
+            <h2>Enter OTP</h2>
+            <p>Enter OTP sent to user mobile number</p>
+            <div class="otp-input-container">
+                <input type="text" maxlength="1" class="otp-input" id="otp1">
+                <input type="text" maxlength="1" class="otp-input" id="otp2">
+                <input type="text" maxlength="1" class="otp-input" id="otp3">
+                <input type="text" maxlength="1" class="otp-input" id="otp4">
+            </div>
+            <button class="submit-otp-button" id="submitOtpBtn">Submit OTP</button>
+        </div>
+    </div>
+
+    <div id="statusModal" class="modal hidden">
+        <div class="modal-content status-content">
+            <span class="close-button" data-modal="statusModal">&times;</span>
+            <h2>Update Ride Status</h2>
+            
+            <div class="status-options-grid">
+                <div class="status-icon-option" data-status="Travelling to Pick-up location">
+                    <span class="status-icon">🚗</span>
+                    <span class="status-label">Travelling to Pick-up</span>
+                </div>
+
+                <div class="status-icon-option" data-status="Reached Pick up location">
+                    <span class="status-icon">📍</span>
+                    <span class="status-label">Reached Pick up</span>
+                </div>
+
+                <div class="status-icon-option" data-status="Waiting at Pick up location">
+                    <span class="status-icon">⌛</span>
+                    <span class="status-label">Waiting</span>
+                </div>
+
+                <div class="status-icon-option" data-status="Patient On boarded & Started">
+                    <span class="status-icon">🚑</span>
+                    <span class="status-label">Patient Onboarded</span>
+                </div>
+
+                <div class="status-icon-option" data-status="Travelling to Drop-off location">
+                    <span class="status-icon">🛣️</span>
+                    <span class="status-label">Travelling to Drop</span>
+                </div>
+
+                <div class="status-icon-option" data-status="Reached Destination">
+                    <span class="status-icon">🏁</span>
+                    <span class="status-label">Reached Dest.</span>
+                </div>
+
+                <div class="status-icon-option" data-status="Booking Closed">
+                    <span class="status-icon">✅</span>
+                    <span class="status-label">Booking Closed</span>
+                </div>
+            </div>
+
+            <button class="submit-status-button" id="submitStatusBtn">Update Status</button>
+        </div>
+    </div>
+
+    <div id="trackLocationModal" class="modal hidden">
+        <div class="modal-content location-confirm-content">
+            <span class="close-button" data-modal="trackLocationModal">&times;</span>
+            <h2>Confirm Location</h2>
+            
+            <div class="location-field-group">
+                <div class="location-input-row">
+                    <span class="location-icon pickup-icon"></span>
+                    <div class="location-input-wrap">
+                        <label for="pickupLocationInput">PICKUP</label>
+                        <input type="text" id="pickupLocationInput" value="Sairam Flats, Arcot Road, Valasravakkam, Chennai">
+                    </div>
+                </div>
+                <div class="location-input-row">
+                    <span class="location-icon dropoff-icon"></span>
+                    <div class="location-input-wrap">
+                        <label for="dropoffLocationInput">DROPOFF</label>
+                        <input type="text" id="dropoffLocationInput" value="MIOT International, Manappakkam, Chennai">
+                    </div>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <img src="assets/route_map.png" alt="Route Map" class="static-map-image">
+            </div>
+
+            <button class="confirm-location-button" id="confirmLocationBtn">Confirm Location</button>
+        </div>
+    </div>
+
+    <script>
+        // Load Header
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header-placeholder').innerHTML = data);
+
+        // Load Navbar (Mobile Bottom)
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('navbar-placeholder').innerHTML = data);
+            
+        // Load Sidebar (Desktop Left)
+        fetch('sidebar.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('sidebar-placeholder').innerHTML = data);
+    </script>
+</body>
+</html>

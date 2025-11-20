@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bookings - Health Umbrella</title>
+    <link rel="stylesheet" href="layout.css">
+    <script src="layout.js" defer></script>
+</head>
+<body>
+    <div id="sidebar-placeholder"></div>
+
+    <div id="header-placeholder"></div>
+
+    <div class="main-content">
+        <div class="booking-list-container">
+            
+            <div class="page-header">
+                <button class="back-button" onclick="window.location.href='index.html'">❮</button>
+                <h2>Booking list</h2>
+                <div class="date-filter">
+                    <span>Today</span> ▼
+                </div>
+            </div>
+
+            <div class="tabs-container">
+                <button class="tab-btn active" onclick="openTab('current')">Current</button>
+                <button class="tab-btn" onclick="openTab('completed')">Completed</button>
+                <button class="tab-btn" onclick="openTab('cancelled')">Cancelled</button>
+                <button class="tab-btn" onclick="openTab('rejected')">Rejected</button>
+            </div>
+
+            <div id="current" class="tab-content active">
+                
+                <div class="booking-card">
+                    <div class="card-top">
+                        <div class="card-id-row">
+                            <img src="assets/ambulance_icon.png" class="card-icon">
+                            <div class="card-id-info">
+                                <h4>Booking Id : JHDX44</h4>
+                                <span class="sub-text">Small (Omni, etc)</span>
+                            </div>
+                            <span class="badge badge-emergency">Emergency</span>
+                        </div>
+                        <div class="card-locations">
+                            <div class="loc-row"><span class="dot pickup"></span> <p>Pickup : No 3/1, 1 Street west mambalam chennai -33</p></div>
+                            <div class="loc-row"><span class="dot drop"></span> <p>Drop : No 3/1, 1 Street vyasrapadi chennai -33</p></div>
+                        </div>
+                        <div class="card-meta">
+                            <div><span class="label">Date :</span> 09/04/2025</div>
+                            <div><span class="label">Time :</span> 05:10 PM</div>
+                        </div>
+                        <div class="card-price">₹ 1,800</div>
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn-outline-red">Reject</button> 
+						<button class="btn-solid-purple" onclick="window.location.href='driverhome.html'">Accept</button>
+                    </div>
+                </div>
+
+                <div class="booking-card">
+                    <div class="card-top">
+                        <div class="card-id-row">
+                            <img src="assets/ambulance_icon.png" class="card-icon">
+                            <div class="card-id-info">
+                                <h4>Booking Id : JHDX44</h4>
+                                <span class="sub-text">Small (Omni, etc)</span>
+                            </div>
+                            <span class="badge badge-emergency">Emergency</span>
+                        </div>
+                        <div class="card-locations">
+                            <div class="loc-row"><span class="dot pickup"></span> <p>Pickup : No 3/1, 1 Street west mambalam chennai -33</p></div>
+                            <div class="loc-row"><span class="dot drop"></span> <p>Drop : No 3/1, 1 Street vyasrapadi chennai -33</p></div>
+                        </div>
+                        <div class="card-price">₹ 1,800</div>
+                    </div>
+                    <div class="card-actions"> 
+						<button class="btn-solid-purple" onclick="window.location.href='booking-details-completed.html'">View Details</button>
+                        <button class="btn-solid-purple">Track Location</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="completed" class="tab-content">
+                <div class="booking-card">
+                    <div class="card-top">
+                        <div class="card-id-row">
+                            <img src="assets/ambulance_icon.png" class="card-icon">
+                            <div class="card-id-info">
+                                <h4>Booking Id : JHDX44</h4>
+                                <span class="sub-text">Small (Omni, etc)</span>
+                            </div>
+                        </div>
+                        <div class="card-locations">
+                            <div class="loc-row"><span class="dot pickup"></span> <p>Pickup : No 3/1, 1 Street west mambalam chennai -33</p></div>
+                            <div class="loc-row"><span class="dot drop"></span> <p>Drop : No 3/1, 1 Street vyasrapadi chennai -33</p></div>
+                        </div>
+                        <div class="card-contact">
+                            <span>Name : Jeswanth Kumar</span>
+                            <span>Contact : 934566547</span>
+                        </div>
+                        <div class="card-price-row">
+                            <span>Total Amount</span>
+                            <span class="price-large">₹ 1,800</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn-completed" disabled>Completed</button> 
+						<button class="btn-solid-purple" onclick="window.location.href='booking-details-completed.html'">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="cancelled" class="tab-content">
+                <div class="booking-card">
+                    <div class="card-top">
+                        <div class="card-id-row">
+                            <img src="assets/ambulance_icon.png" class="card-icon">
+                            <div class="card-id-info">
+                                <h4>Booking Id : JHDX44</h4>
+                                <span class="sub-text">Small (Omni, etc)</span>
+                            </div>
+                            <span class="badge badge-user">By User</span>
+                        </div>
+                        <div class="card-locations">
+                            <div class="loc-row"><span class="dot pickup"></span> <p>Pickup : No 3/1, 1 Street west mambalam chennai -33</p></div>
+                            <div class="loc-row"><span class="dot drop"></span> <p>Drop : No 3/1, 1 Street vyasrapadi chennai -33</p></div>
+                        </div>
+                        <div class="card-price-row">
+                            <span>Total Amount</span>
+                            <span class="price-large">₹ 1,800</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn-cancelled" disabled>Cancelled</button>
+						<button class="btn-solid-purple" onclick="window.location.href='booking-details-completed.html'">View Details</button> 
+                    </div>
+                </div>
+            </div>
+
+            <div id="rejected" class="tab-content">
+                <div class="booking-card">
+                    <div class="card-top">
+                        <div class="card-id-row">
+                            <img src="assets/ambulance_icon.png" class="card-icon">
+                            <div class="card-id-info">
+                                <h4>Booking Id : JHDX44</h4>
+                                <span class="sub-text">Small (Omni, etc)</span>
+                            </div>
+                            <span class="badge badge-user">By Driver</span>
+                        </div>
+                        <div class="card-locations">
+                            <div class="loc-row"><span class="dot pickup"></span> <p>Pickup : No 3/1, 1 Street west mambalam chennai -33</p></div>
+                            <div class="loc-row"><span class="dot drop"></span> <p>Drop : No 3/1, 1 Street vyasrapadi chennai -33</p></div>
+                        </div>
+                        <div class="card-price-row">
+                            <span>Total Amount</span>
+                            <span class="price-large">₹ 1,800</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn-cancelled" disabled>Rejected</button>
+                    <button class="btn-solid-purple" onclick="window.location.href='booking-details-completed.html'">View Details</button>
+                     </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="navbar-placeholder"></div>
+
+    <script>
+        // Simple Tab Logic for this page
+        function openTab(tabName) {
+            // Hide all tab content
+            var i;
+            var x = document.getElementsByClassName("tab-content");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+                x[i].classList.remove("active");
+            }
+            
+            // Remove active class from all buttons
+            var tabBtns = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tabBtns.length; i++) {
+                tabBtns[i].classList.remove("active");
+            }
+
+            // Show specific tab
+            document.getElementById(tabName).style.display = "block";
+            // Add active class to clicked button (simple logic finding button by text or order)
+            // For simplicity, we let the click event handle class toggling visually:
+            event.currentTarget.classList.add("active");
+        }
+
+        // Initialize: Fetch components
+        fetch('header.html').then(r => r.text()).then(d => document.getElementById('header-placeholder').innerHTML = d);
+        fetch('navbar.html').then(r => r.text()).then(d => {
+            document.getElementById('navbar-placeholder').innerHTML = d;
+            // Highlight the "Booking" icon in navbar
+            setTimeout(() => {
+                const navItems = document.querySelectorAll('.nav-item');
+                navItems.forEach(item => item.classList.remove('active'));
+                navItems[1].classList.add('active'); // Assuming Booking is 2nd item
+            }, 100);
+        });
+        fetch('sidebar.html').then(r => r.text()).then(d => document.getElementById('sidebar-placeholder').innerHTML = d);
+    </script>
+</body>
+</html>
